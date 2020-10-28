@@ -25,8 +25,6 @@ public class PolicyHandler{
     public void wheneverDelivered_GetPointPol(@Payload Delivered delivered){
 
         if(delivered.isMe()){
-            //LJK
-
             Iterator<Point> iterator = pointRepository.findAll().iterator();
             while(iterator.hasNext()){
                 Point pointTmp = iterator.next();
@@ -38,8 +36,6 @@ public class PolicyHandler{
 
                 }
             }
-            //LJK
-
             System.out.println("##### listener GetPointPol : " + delivered.toJson());
         }
     }
